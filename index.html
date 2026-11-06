@@ -493,7 +493,7 @@ const ctl = {
   slotA: 1,                             // карточка видна при фильтре
 };
 const HERO_ANG = 30; // ровно кадр 03
-function heroPose() { const w = mob() ? innerWidth * 1.08 : Math.min(innerWidth * .6, innerHeight * 1.08); return { x: innerWidth * .5, y: innerHeight * (mob() ? .5 : .57), w }; }
+function heroPose() { const w = mob() ? Math.min(innerWidth * 1.08, innerHeight * .55) : Math.min(innerWidth * .6, innerHeight * 1.08); return { x: innerWidth * .5, y: innerHeight * (mob() ? .5 : .57), w }; }
 function detPose() { return mob() ? { x: innerWidth * .5, y: innerHeight * .3, w: innerWidth * .98 } : { x: innerWidth * .32, y: innerHeight * .55, w: Math.min(innerWidth * .52, innerHeight * .98) }; }
 function slotPose() { const r = q('.card.slot .ph').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height * .5, w: r.width * .96, vis: r.bottom > -40 && r.top < innerHeight + 40 }; }
 const mixP = (a, b, t) => ({ x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t), w: lerp(a.w, b.w, t) });
